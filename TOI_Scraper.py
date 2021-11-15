@@ -52,6 +52,11 @@ for date in dates:
 # Save the csv per month
     file_name = month+'-'+year+'.csv'
 
+    if os.path.isdir(str(year)):
+        print("Exists")
+    else:
+        os.mkdir(str(year))
+
     file_exists = os.path.exists(year+'/'+file_name)
 
     with open(year+'/'+file_name, 'a', newline='', encoding='utf-8') as file:
